@@ -8,5 +8,5 @@ FROM node:22-slim
 WORKDIR /usr/src/app
 COPY --from=builder /usr/src/app/ /usr/src/app/
 COPY . .
-CMD ["npx quartz build && rm -rf /usr/src/app/export/* && cp -r /usr/src/app/public/* /usr/src/app/export"]
+CMD ["npx quartz build -o public/www"]
 
